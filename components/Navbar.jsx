@@ -1,9 +1,12 @@
+"use client"
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { RainbowButton } from './magicui/rainbow-button'
+import { useRouter } from 'next/navigation'
 
 function Navbar() {
+  const router = useRouter();
   return (
     <div className="w-full fixed top-0  bg-black  z-50 backdrop-blur-md">
       <nav className="container mx-auto px-4 h-16 flex justify-between w-full p-2 items-center">
@@ -61,7 +64,7 @@ function Navbar() {
           {/* <SignedOut> */}
             {/* <SignInButton> */}
               {/* <Button variant={"outline"}>Sign In</Button> */}
-              <RainbowButton variant="outline">Get Started</RainbowButton>
+              <RainbowButton variant="outline" onClick={() => router.push('/resume')}>Start Creating</RainbowButton>
             {/* </SignInButton> */}
           {/* </SignedOut> */}
           {/* <SignedIn> */}
